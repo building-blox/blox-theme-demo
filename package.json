@@ -1,0 +1,42 @@
+{
+  "name": "blox-theme-demo",
+  "description": "A starter project for Blox - a nice way to build static websites.",
+  "version": "1.0.0",
+  "author": "Richard Lovell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richjava/blox"
+  },
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "npm run serve",
+    "serve": "gulp",
+    "start": "build",
+    "build": "gulp build",
+    "load": "gulp blox:load --dataUrl",
+    "now-build": "npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.26.5",
+    "dotenv": "^7.0.0",
+    "dotenv-expand": "^5.1.0",
+    "gulp": "^4.0.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.1.7",
+    "gulp-util": "^3.0.8",
+    "postcss-scss": "^0.1.7",
+    "rollup": "^2.10.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "workbox-build": "^4.3.1"
+  },
+  "dependencies": {}
+}

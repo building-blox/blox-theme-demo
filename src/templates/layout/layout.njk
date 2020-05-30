@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{page.title}}
+            |
+            {{app.name}}</title>
+        <meta name="description" content="{{app.description}}"/>
+        <meta name="theme-color" content="{{app.pwaThemeColor}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ blox.sitePath }}images/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ blox.sitePath }}images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ blox.sitePath }}images/icons/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <!-- These are not blox styles. They're just used for the carousel and can be removed if you want. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+        <script src="https://kit.fontawesome.com/0b3e712e23.js" crossorigin="anonymous"></script>
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="{{ blox.sitePath }}css/styles.min.css">
+        {% if blox.page.hasStyles %}
+            <link rel="stylesheet" href="{{ blox.page.path }}styles.min.css">
+        {% endif %}
+        <!-- Extra head elements (you can create actions for Blox hooks) -->
+        {% include "utils/head-elements.njk" %}
+    </head>
+
+    <body data-theme="dark">
+        <header>
+        <nav class="main-nav">
+            <ul class="nav">
+                <li class="nav__brand">Brand</li>
+                <li class="nav__item">
+                    <a href="/" {% if blox.page.name == 'home' %}class="nav__link nav__link_active"
+                        {% else %}class="nav__link" {% endif %}>Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/features" {% if 'features' in blox.page.name %}class="nav__link nav__link_active"
+                        {% else %}class="nav__link" {% endif %}>Features</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/docs" {% if blox.page.name == 'docs' %}class="nav__link nav__link_active"
+                        {% else %}class="nav__link" {% endif %}>Documentation</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/admin?space=wanaka-concert-society" {% if blox.page.name == 'admin' %}class="nav__link nav__link_active"
+                        {% else %}class="nav__link" {% endif %}>Admin</a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+        <main>
+            {% if blox.page.name != 'admin' %}
+                <div class="theme-picker">
+                    <i class="theme far fa-moon fa-2x"></i>
+                </div>
+            {% endif %}
+            {% block content %}{% endblock %}
+            {% if blox.page.name != 'admin' %}
+        <footer>
+            <div class="container">
+                <p>Made with love by the folks at
+                    <a href="http://appyay.com" target="_blank" rel="noreferrer">Appyay</a>
+                </p>
+            </div>
+        </footer>
+        {% endif %}
+        <!-- These are not blox scripts. They're just used for the carousel/Admin page and can be removed if you want. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <!-- Custom scripts -->
+        <script src="{{ blox.sitePath }}/js/index.min.js"></script>
+        {% if blox.page.hasScripts %}
+            <script src="{{ blox.page.path }}index.min.js"></script>
+        {% endif %}
+    </body>
+
+</html>

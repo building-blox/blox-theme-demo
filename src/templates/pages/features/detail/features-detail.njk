@@ -1,0 +1,20 @@
+{% set page = { 
+  name: 'features_detail',
+  title: blox.item.fields.title
+  } %}
+{% extends "layout/layout.njk" %}
+
+{% block content %}
+<div class="detail item container">
+  <ul class="breadcrumbs">
+    <li><a href="/features">Features</a></li>
+    <li>{{blox.item.fields.title}}</li>
+  </ul>
+  <div class="detail__header">
+    <h1>{{blox.item.fields.title}}</h1>
+  </div>
+  <div class="detail__body">
+     {{blox.item.fields.body | safe}}
+  </div>
+</div>
+{% endblock %}

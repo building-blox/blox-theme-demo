@@ -1,0 +1,12 @@
+<!-- Front matter (the page variable can be accessed in any includes and partials) -->
+{% set page = {
+    name: 'home',
+    title: 'Home'
+} %}
+
+{% extends "layout/layout.njk" %}
+
+{% block content %}
+    {% block landing %}{% endblock %}
+    {% block reviews %}{% endblock %}
+{% endblock %}

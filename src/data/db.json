@@ -1,0 +1,276 @@
+{
+  "features": {
+    "items": [
+      {
+        "id": "5cdbe99926f50c075bae4399",
+        "slug": "modular-architecture",
+        "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae4399/module (1).png",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.057Z",
+        "updatedAt": "2019-05-21T05:18:59.169Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "title": "Modular architecture",
+          "body": "<p>Blox uses a combination of industry standard technologies to create modular, reusable components.</p><h2>Templating</h2><p>Through the use of template inheritance, we can create child HTML components. In addition to this, we can also include blocks of HTML into a scope, and this is used in this project for partial components.</p><h2>Modular CSS</h2><p>One of the benefits of CSS-in-JS is that it abstracts the CSS model to the component level, rather than the document level. In this project, modularity of styles is achieved by placing Sass files at component level. CSS won't be scoped to the page as is with CSS-in-JS, but BEM naming is used instead to enforce scoping.</p><h2>Modular Javascript</h2><p>You don't need to write any Javascript for the project to work, but if you do want to use it you can choose to use it globally or at a component level.</p>",
+          "image": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae4399/module (1).png"
+        }
+      },
+      {
+        "id": "5cdbe99926f50c075bae439b",
+        "slug": "easily-customizable",
+        "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae439b/customer-support.png",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.092Z",
+        "updatedAt": "2019-05-20T09:35:25.244Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "title": "Easily customizable",
+          "body": "<p>This project comes with a common set of tasks to run for development and optimize for production, but these tasks can be changed or removed to suit your needs and new tasks can be plugged in easily.</p><p>Blox is built on top of Gulp.js, a steaming build system popular for its simplicity and huge ecosystem of plugins. Here's an example of how Gulp task that gets images from the<em> src</em> directory and pipes them to the <em>public</em> directory:</p><pre class=\"ql-syntax\" spellcheck=\"false\">gulp.task('images', function() {\n  return gulp.src(['src/assets/images/**/*.{gif,jpg,png,svg}'])\n      .pipe(gulp.dest('public/images'));\n});\n</pre><p>The Blox library only requires two things: Gulp for the build system and Nunjucks for templating. The rest is up to the developer.</p>",
+          "image": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae439b/customer-support.png"
+        }
+      },
+      {
+        "id": "5cdbe99926f50c075bae439d",
+        "slug": "built-for-rapid-development",
+        "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae439d/startup (1).png",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.098Z",
+        "updatedAt": "2019-05-20T09:34:54.997Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "title": "Built for rapid development",
+          "body": "<p>Blox makes it simple to take an HTML template and convert it into a dynamic data-driven static website! In fact, it will work out of the box if you copy and paste the HTML, CSS and Javascript into the right places. There is no CC-in-JS to deal with</p>",
+          "image": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/items/5cdbe99926f50c075bae439d/startup (1).png"
+        }
+      }
+    ],
+    "contentType": {
+      "id": "5cdbe99926f50c075bae4398",
+      "name": "Feature",
+      "pluralName": "Features",
+      "description": "Features of the App.",
+      "type": "entity"
+    }
+  },
+  "reviews": {
+    "items": [
+      {
+        "id": "5cdbe99926f50c075bae43a0",
+        "slug": "review-1",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.117Z",
+        "updatedAt": "2019-05-15T10:27:37.117Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "quote": "What art offers is space - a certain breathing room for the spirit.",
+          "reviewerName": "John Updike",
+          "image": "https://randomuser.me/api/portraits/women/80.jpg"
+        }
+      },
+      {
+        "id": "5cdbe99926f50c075bae43a2",
+        "slug": "review-2",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.122Z",
+        "updatedAt": "2019-05-15T10:27:37.122Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "quote": "We do not see nature with our eyes, but with our understandings and our hearts.",
+          "reviewerName": "William Hazlitt",
+          "image": "https://randomuser.me/api/portraits/women/80.jpg"
+        }
+      },
+      {
+        "id": "5cdbe99926f50c075bae43a4",
+        "slug": "review-3",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.128Z",
+        "updatedAt": "2019-05-15T10:27:37.128Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "quote": "The only courage that matters is the kind that gets you from one moment to the next.",
+          "reviewerName": "Mignon McLaughlin",
+          "image": "https://randomuser.me/api/portraits/women/80.jpg"
+        }
+      },
+      {
+        "id": "5cdbe99926f50c075bae43a6",
+        "slug": "review-4",
+        "tags": [],
+        "createdAt": "2019-05-15T10:27:37.134Z",
+        "updatedAt": "2019-05-15T10:27:37.134Z",
+        "author": {
+          "_id": "5cdbe91426f50c075bae4390",
+          "displayName": "Richard Lovell",
+          "username": "richard_lovell",
+          "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+        },
+        "fields": {
+          "quote": "No man has a good enough memory to be a successful liar.",
+          "reviewerName": "Abraham Lincoln",
+          "image": "https://randomuser.me/api/portraits/women/80.jpg"
+        }
+      }
+    ],
+    "contentType": {
+      "id": "5cdbe99926f50c075bae439f",
+      "name": "Review",
+      "pluralName": "Reviews",
+      "description": "Reviews of the App.",
+      "type": "entity"
+    }
+  },
+  "documentation": {
+    "id": "5cdbe99926f50c075bae43a9",
+    "slug": "documentation",
+    "tags": [],
+    "createdAt": "2019-05-15T10:27:37.159Z",
+    "updatedAt": "2019-05-21T05:21:00.858Z",
+    "author": {
+      "_id": "5cdbe91426f50c075bae4390",
+      "displayName": "Richard Lovell",
+      "username": "richard_lovell",
+      "profileImageUrl": "https://s3-ap-southeast-2.amazonaws.com/com.appyay/users/richard_lovell/avatar"
+    },
+    "fields": {
+      "body": "<p>Blox Theme Demo is a starter project for the Blox static website generator</a>. The primary goal of the project is to facilitate rapid development of static websites.</p><p>This project includes:</p><ul><li>Sass preprocessing</li><li>Nunjucks/HTML for templating</li><li>CSS concatenation and minification</li><li>Javascript concatenation and uglification</li><li>Multi-browser live browser reload</li><li>Master-detail pattern</li><li>A modular, reusable design</li></ul><h2>Getting Started</h2><h3>Clone this repository</h3><pre class=\"ql-syntax\" spellcheck=\"false\">git clone https://github.com/Building-Blox/blox-theme-demo.git\ncd blox-theme-demo\n</pre><p>Or <a href=\"#\" target=\"_blank\">download as a ZIP</a></p><p><br></p><h3>Install packages</h3><pre class=\"ql-syntax\" spellcheck=\"false\">npm install\n</pre><h3>Run the development server</h3><pre class=\"ql-syntax\" spellcheck=\"false\">npm run dev\n</pre><p>The website will be viewable at <em>http://localhost:3000</em>. On save of the project, output will be compiled and built to the \"public\" directory and the website will be reloaded.</p><p><br></p><h2>How to use</h2><h3>Project structure</h3><p>Blox assumes the following project structure:</p><pre class=\"ql-syntax\" spellcheck=\"false\">|--src\n  |--assets\n  |--data // folder and contents will be generated if supplied a data URL\n    |--db.json \n  |--templates\n    |--components\n      |--list-item // This is a shared component\n        |--list-item.njk\n    |--pages\n      |--home // This is a page\n        |--home.njk\n|--gulpfile.js // required\n</pre><h3>Creating templates</h3><p><a href=\"https://mozilla.github.io/nunjucks/\" target=\"_blank\">Nunjucks</a> is used for compiling template files to HTML.</p><p>You can write templates in the <em>src/templates</em> directory. To create a template, create a file in the templates directory with the \".njk\" file extension.</p><p><br></p><h3>Pages</h3><p>Pages are added as sub-directories of the <em>pages</em> directory.</p><h3>Partials</h3><p>Page partials encapulate parts of a page. The home folder (home page) contains two examples of partials: <em>_landing.njk </em>and <em>_reviews.njk</em>.</p><p>Partial files are defined with Nunjucks blocks:</p><pre class=\"ql-syntax\" spellcheck=\"false\">{% extends \"pages/home/home.njk\" %}\n\n{% block greeting %}\n&lt;h2&gt;Hi&lt;/h2&gt;\n{% endblock %}\n</pre><p>The partial can then be used in your page like so:</p><pre class=\"ql-syntax\" spellcheck=\"false\">{% block greeting %}{% endblock %}\n</pre><h3>Components</h3><p>Components are resusable parts of your site. A component is a Nunjucks macro that you can import into a template, and you can also pass data from the template to the component.</p><pre class=\"ql-syntax\" spellcheck=\"false\">{% import \"components/list-item/list-item.njk\" as listItem %}\n...\n{% call listItem.default({\n    feature: feature\n}) %}{% endcall %}\n</pre><p>More properties can be added to this object as needed.</p><p><br></p><h3>Detail pages</h3><p>The master-detail pattern (i.e. a list page and a detail page), is demonstrated in the features page:</p><pre class=\"ql-syntax\" spellcheck=\"false\">...\n|--pages\n  ...\n  |--features // page folder\n    |--detail\n      |--index.njk // this is your detail page\n    |--index.njk //this is your list (master) page\n  ...\n</pre><p>So, if a feature item has an ID of \"abc123\", the detail page would be accessible at: <em>http://localhost:3000/features/abc123</em></p><p><br></p><h2>Data</h2><h3>Loading data</h3><p>Dummy data of reviews, features and documentation is already included in the project. Data can be loaded in three ways:</p><p>Manually add a <em>db.json</em> file to the data folder.</p><p>Load remote data by running:</p><pre class=\"ql-syntax\" spellcheck=\"false\">npm load --dataUrl 'http://example.com/api/whatever'\n</pre><p>Load remote data and build the project by running:</p><pre class=\"ql-syntax\" spellcheck=\"false\">npm build\n</pre><h3>Database</h3><p>The database data for the application is located at <em>data/db.json</em>. This data can be repopulated every time the project builds, so you can have dynamic data if used in combination with static hosting services, webhooks and a headless CMS.</p><p>Data in this file should be in the following format (using \"features\" as an example):</p><pre class=\"ql-syntax\" spellcheck=\"false\">{\n  \"features\": {\n    \"items\": [{\n      \"id\": \"abc123\",\n      ...\n    }]\n  }\n}\n</pre><h2>Assets</h2><h3>Sass</h3><p>Sass files are stored in the <em>src/assets/scss/</em> directory and in the root of page directories. The root Sass file is <em>src/assets/scss/index.scss</em> and page Sass files are imported in this file like this:</p><pre class=\"ql-syntax\" spellcheck=\"false\">@import '../../templates/pages/home/index';\n</pre><h3>Javascript</h3><p>Javascript files can be added to the <em>src/assets/js</em> folder and will be concatenated into one file and uglified.</p><p><br></p><h3>Images</h3><p>Images can be added to the <em>src/assets/images</em> folder. This is an example of how to access an image:</p><pre class=\"ql-syntax\" spellcheck=\"false\">src=\"{{ blox.sitePath }}my-image.png\"\n</pre>"
+    },
+    "contentType": {
+      "id": "5cdbe99926f50c075bae43a8",
+      "name": "Documentation",
+      "pluralName": "Documentation",
+      "description": "Blox Starter Documentation",
+      "type": "page"
+    }
+  },
+  "meta": {
+    "space": {
+      "id": "5eafcebd834092647ff71fe9",
+      "name": "Wanaka Concert Society",
+      "slug": "wanaka-concert-society",
+      "description": "Content Management System for Wanaka Concert Society",
+      "visibility": "private",
+      "theme": {
+        "id": "5eafcebd834092647ff71fea",
+        "name": "Default",
+        "slug": "default",
+        "colorPairs": {
+          "primary": {
+            "_id": "5eafcebd834092647ff71fec",
+            "name": "Primary",
+            "slug": "primary",
+            "color": {
+              "levels": true,
+              "hue": true,
+              "saturation": true,
+              "lightness": true,
+              "_id": "5eafcebd834092647ff71fed",
+              "h": "0",
+              "s": "0",
+              "l": "15"
+            },
+            "contrastColor": {
+              "levels": true,
+              "hue": false,
+              "saturation": false,
+              "lightness": false,
+              "_id": "5eafcebd834092647ff71feb",
+              "h": "0",
+              "s": "0",
+              "l": "100"
+            }
+          },
+          "secondary": {
+            "_id": "5eafcebd834092647ff71fef",
+            "name": "Secondary",
+            "slug": "secondary",
+            "color": {
+              "levels": true,
+              "hue": true,
+              "saturation": true,
+              "lightness": true,
+              "_id": "5eafcebd834092647ff71ff0",
+              "h": "39",
+              "s": "36",
+              "l": "52"
+            },
+            "contrastColor": {
+              "levels": true,
+              "hue": false,
+              "saturation": false,
+              "lightness": false,
+              "_id": "5eafcebd834092647ff71feb",
+              "h": "0",
+              "s": "0",
+              "l": "100"
+            }
+          },
+          "ternary": {
+            "_id": "5eafcebd834092647ff71fef",
+            "name": "Ternary",
+            "slug": "ternary",
+            "color": {
+              "levels": true,
+              "hue": false,
+              "saturation": false,
+              "lightness": false,
+              "_id": "5eafcebd834092647ff71ff0",
+              "h": "0",
+              "s": "100",
+              "l": "100"
+            },
+            "contrastColor": {
+              "_id": "5eafcebd834092647ff71feb",
+              "levels": true,
+              "hue": false,
+              "saturation": false,
+              "lightness": false,
+              "h": "0",
+              "s": "0",
+              "l": "0"
+            }
+          }
+        },
+        "fonts": {
+          "primary": {
+            "_id": "5eafcebd834092647ff71fec",
+            "name": "Primary",
+            "slug": "primary",
+            "link": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=option",
+            "fontFamily": "'Montserrat', sans-serif"
+          }
+        }
+      }
+    }
+  }
+}

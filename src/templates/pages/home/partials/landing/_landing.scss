@@ -1,0 +1,47 @@
+/**************
+Landing section
+***************/
+
+.landing{
+	text-align: center;
+	padding: 120px 0 100px 0;
+	&__tagline {
+		color: #fff;
+		font-size: 1.6em;
+		font-weight: 200;
+	}
+}
+
+.jenbox {
+	background-color: var(--color-bg-contrast);
+	font-family: var(--font-primary);
+	font-weight: 900;
+	padding: 70px 60px;
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 20px;
+	&__jen {
+		font-size: 60px;
+		color: var(--color-secondary);
+		margin: 0;
+	}
+	&__starter {
+		font-size: 30px;
+		color: var(--color-bg);
+		margin: 0;
+		font-weight: 300;
+	}
+}
+
+.slick-dots li button::before {
+    opacity: 0.25;
+    color: var(--color-bg-contrast);
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--color-bg-contrast);
+}
+
+.perf__badge {
+	margin-left: 10px;
+}

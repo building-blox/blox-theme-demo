@@ -1,0 +1,9 @@
+{% set elements = '' %}
+{% for el in blox.page.headElements %}
+    {% set elements = elements + '<' + el.tagName %}
+    {% for attr in el.attributes %}
+        {% set elements = elements + ' ' + attr.name + '="' + attr.value + '"' %}
+    {% endfor %}
+    {% set elements = elements + '>' %}
+{% endfor %}
+{{ elements | safe }}

@@ -1,0 +1,17 @@
+/***********
+Features
+************/
+
+.features {
+	padding: 20px 60px 20px 60px;
+	.attribution {
+		padding: 100px 0 0 0;
+		color: var(--color-contrast-medium);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.features {
+		padding: 0 10px 100px 10px;
+	}
+}

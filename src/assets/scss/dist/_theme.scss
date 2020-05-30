@@ -1,0 +1,122 @@
+/* Theme */
+
+:root {
+  --color-primary-h: 0;
+  --color-primary-s: 0%;
+  --color-primary-l: 15%;
+  --color-primary-hsl: var(--color-primary-h), var(--color-primary-s), var(--color-primary-l);
+
+  --color-primary: hsl(var(--color-primary-hsl));
+--color-primary-hs: var(--color-primary-h), var(--color-primary-s);
+--color-primary-10: hsl(var(--color-primary-hs), 90%);
+--color-primary-20: hsl(var(--color-primary-hs), 80%);
+--color-primary-30: hsl(var(--color-primary-hs), 70%);
+--color-primary-40: hsl(var(--color-primary-hs), 60%);
+--color-primary-50: hsl(var(--color-primary-hs), 50%);
+--color-primary-60: hsl(var(--color-primary-hs), 40%);
+--color-primary-70: hsl(var(--color-primary-hs), 30%);
+--color-primary-80: hsl(var(--color-primary-hs), 20%);
+--color-primary-90: hsl(var(--color-primary-hs), 10%);
+  --color-primary-warm: hsl(calc(var(--color-primary-h) + 80), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-cold: hsl(calc(var(--color-primary-h) - 80), var(--color-primary-s), var(--color-primary-l));
+
+  --color-primary-low: hsl(var(--color-primary-h), calc(var(--color-primary-s) / 2), var(--color-primary-l));
+  --color-primary-lowest: hsl(var(--color-primary-h), calc(var(--color-primary-s) / 4), var(--color-primary-l));
+  
+  --color-primary-light: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) / .9));
+  --color-primary-dark: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) * .9));
+
+  /* Each color in the palette may have a contrast color specified (used for inverted text, icons, etc) */
+  --color-primary-contrast-h: 0;
+  --color-primary-contrast-s: 0%;
+  --color-primary-contrast-l: 100%;
+  --color-primary-contrast-hsl: var(--color-primary-contrast-h), var(--color-primary-contrast-s), var(--color-primary-contrast-l);
+  --color-primary-contrast: hsl(var(--color-primary-contrast-hsl));
+
+--color-primary-contrast-hs: var(--color-primary-contrast-h), var(--color-primary-contrast-s);
+--color-primary-contrast-10: hsl(var(--color-primary-contrast-hs), 90%);
+--color-primary-contrast-20: hsl(var(--color-primary-contrast-hs), 80%);
+--color-primary-contrast-30: hsl(var(--color-primary-contrast-hs), 70%);
+--color-primary-contrast-40: hsl(var(--color-primary-contrast-hs), 60%);
+--color-primary-contrast-50: hsl(var(--color-primary-contrast-hs), 50%);
+--color-primary-contrast-60: hsl(var(--color-primary-contrast-hs), 40%);
+--color-primary-contrast-70: hsl(var(--color-primary-contrast-hs), 30%);
+--color-primary-contrast-80: hsl(var(--color-primary-contrast-hs), 20%);
+--color-primary-contrast-90: hsl(var(--color-primary-contrast-hs), 10%);
+  --color-secondary-h: 39;
+  --color-secondary-s: 36%;
+  --color-secondary-l: 52%;
+  --color-secondary-hsl: var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l);
+
+  --color-secondary: hsl(var(--color-secondary-hsl));
+--color-secondary-hs: var(--color-secondary-h), var(--color-secondary-s);
+--color-secondary-10: hsl(var(--color-secondary-hs), 90%);
+--color-secondary-20: hsl(var(--color-secondary-hs), 80%);
+--color-secondary-30: hsl(var(--color-secondary-hs), 70%);
+--color-secondary-40: hsl(var(--color-secondary-hs), 60%);
+--color-secondary-50: hsl(var(--color-secondary-hs), 50%);
+--color-secondary-60: hsl(var(--color-secondary-hs), 40%);
+--color-secondary-70: hsl(var(--color-secondary-hs), 30%);
+--color-secondary-80: hsl(var(--color-secondary-hs), 20%);
+--color-secondary-90: hsl(var(--color-secondary-hs), 10%);
+  --color-secondary-warm: hsl(calc(var(--color-secondary-h) + 80), var(--color-secondary-s), var(--color-secondary-l));
+  --color-secondary-cold: hsl(calc(var(--color-secondary-h) - 80), var(--color-secondary-s), var(--color-secondary-l));
+
+  --color-secondary-low: hsl(var(--color-secondary-h), calc(var(--color-secondary-s) / 2), var(--color-secondary-l));
+  --color-secondary-lowest: hsl(var(--color-secondary-h), calc(var(--color-secondary-s) / 4), var(--color-secondary-l));
+  
+  --color-secondary-light: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) / .9));
+  --color-secondary-dark: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) * .9));
+
+  /* Each color in the palette may have a contrast color specified (used for inverted text, icons, etc) */
+  --color-secondary-contrast-h: 0;
+  --color-secondary-contrast-s: 0%;
+  --color-secondary-contrast-l: 100%;
+  --color-secondary-contrast-hsl: var(--color-secondary-contrast-h), var(--color-secondary-contrast-s), var(--color-secondary-contrast-l);
+  --color-secondary-contrast: hsl(var(--color-secondary-contrast-hsl));
+
+--color-secondary-contrast-hs: var(--color-secondary-contrast-h), var(--color-secondary-contrast-s);
+--color-secondary-contrast-10: hsl(var(--color-secondary-contrast-hs), 90%);
+--color-secondary-contrast-20: hsl(var(--color-secondary-contrast-hs), 80%);
+--color-secondary-contrast-30: hsl(var(--color-secondary-contrast-hs), 70%);
+--color-secondary-contrast-40: hsl(var(--color-secondary-contrast-hs), 60%);
+--color-secondary-contrast-50: hsl(var(--color-secondary-contrast-hs), 50%);
+--color-secondary-contrast-60: hsl(var(--color-secondary-contrast-hs), 40%);
+--color-secondary-contrast-70: hsl(var(--color-secondary-contrast-hs), 30%);
+--color-secondary-contrast-80: hsl(var(--color-secondary-contrast-hs), 20%);
+--color-secondary-contrast-90: hsl(var(--color-secondary-contrast-hs), 10%);
+  --color-ternary-h: 0;
+  --color-ternary-s: 100%;
+  --color-ternary-l: 100%;
+  --color-ternary-hsl: var(--color-ternary-h), var(--color-ternary-s), var(--color-ternary-l);
+
+  --color-ternary: hsl(var(--color-ternary-hsl));
+--color-ternary-hs: var(--color-ternary-h), var(--color-ternary-s);
+--color-ternary-10: hsl(var(--color-ternary-hs), 90%);
+--color-ternary-20: hsl(var(--color-ternary-hs), 80%);
+--color-ternary-30: hsl(var(--color-ternary-hs), 70%);
+--color-ternary-40: hsl(var(--color-ternary-hs), 60%);
+--color-ternary-50: hsl(var(--color-ternary-hs), 50%);
+--color-ternary-60: hsl(var(--color-ternary-hs), 40%);
+--color-ternary-70: hsl(var(--color-ternary-hs), 30%);
+--color-ternary-80: hsl(var(--color-ternary-hs), 20%);
+--color-ternary-90: hsl(var(--color-ternary-hs), 10%);
+  /* Each color in the palette may have a contrast color specified (used for inverted text, icons, etc) */
+  --color-ternary-contrast-h: 0;
+  --color-ternary-contrast-s: 0%;
+  --color-ternary-contrast-l: 0%;
+  --color-ternary-contrast-hsl: var(--color-ternary-contrast-h), var(--color-ternary-contrast-s), var(--color-ternary-contrast-l);
+  --color-ternary-contrast: hsl(var(--color-ternary-contrast-hsl));
+
+--color-ternary-contrast-hs: var(--color-ternary-contrast-h), var(--color-ternary-contrast-s);
+--color-ternary-contrast-10: hsl(var(--color-ternary-contrast-hs), 90%);
+--color-ternary-contrast-20: hsl(var(--color-ternary-contrast-hs), 80%);
+--color-ternary-contrast-30: hsl(var(--color-ternary-contrast-hs), 70%);
+--color-ternary-contrast-40: hsl(var(--color-ternary-contrast-hs), 60%);
+--color-ternary-contrast-50: hsl(var(--color-ternary-contrast-hs), 50%);
+--color-ternary-contrast-60: hsl(var(--color-ternary-contrast-hs), 40%);
+--color-ternary-contrast-70: hsl(var(--color-ternary-contrast-hs), 30%);
+--color-ternary-contrast-80: hsl(var(--color-ternary-contrast-hs), 20%);
+--color-ternary-contrast-90: hsl(var(--color-ternary-contrast-hs), 10%);
+--font-primary: 'Montserrat', sans-serif;
+}

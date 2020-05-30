@@ -1,0 +1,12 @@
+/************
+Main Sass file
+*************/
+
+//dist/theme is generated as a Blox action using values from the database
+@import 'dist/theme';
+@import 'theme';
+@import 'variables';
+@import 'reset';
+@import 'base';
+@import './dist/components';
+@import '../../templates/layout/layout';

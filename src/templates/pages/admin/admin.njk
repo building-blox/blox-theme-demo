@@ -1,0 +1,14 @@
+
+{% set page = { 
+  name: 'admin',
+  title: 'Admin'
+  } %}
+  
+{% extends "layout/layout.njk" %}
+
+{% block content %}
+    <section class="admin h-screen">
+      <iframe id="adminIframe" class="adminIframe h-screen pt-16" frameborder="0" height="100%" width="100%"></iframe>
+      <div id="message" class="message">Loading...</div>
+    </section>
+{% endblock %}

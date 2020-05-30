@@ -1,0 +1,8 @@
+/************
+Variables
+
+CSS variables are generally used in place of Sass variables because shared Blox components can't access 
+global Sass variables. This is intentional so that the Blox framework isn't coupled with one particular framework.
+Other reasons why CSS variables are favoured are: unlike SASS variables, custom properties 1) are scoped to the 
+element they are declared on, 2) cascade and 3) can be manipulated in JavaScript. 
+*************/

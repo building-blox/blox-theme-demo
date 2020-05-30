@@ -1,0 +1,16 @@
+{%- macro default(args) -%}
+  <div class="list-item">
+    <div class="list-item__item list-item__item_body">
+      <a href="/features/{{ args.feature.slug }}">
+        <h2>{{ args.feature.fields.title }}</h2>
+      </a>
+      <p>
+        {{ args.feature.fields.body | striptags() | truncate(120) }}
+        <a href="/features/{{ args.feature.slug}}">More</a>
+      </p>
+    </div>
+    <div class="list-item__item list-item__item_figure">
+      <a href="/features/{{feature.slug}}">Image</a>
+    </div>
+  </div>
+{%- endmacro -%}

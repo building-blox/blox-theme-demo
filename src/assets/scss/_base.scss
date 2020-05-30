@@ -1,0 +1,91 @@
+/************
+Base Styles
+*************/
+
+body {
+  font-family: var(--font-primary);
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+p {
+  color: var(--color-contrast-high);
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+pre {
+  background-color: var(--color-bg-contrast-medium);
+  color: var(--color-bg);
+  display: inline-block;
+  padding: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+//global styles
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  &__header {
+    padding: 120px 0 50px 0;
+    text-align: center;
+  }
+
+  &__name {
+    color: var(--color-contrast-high);
+    position: relative;
+    z-index: 1;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+    padding: 0 15px 10px 15px;
+  }
+
+  &__name::before {
+    content: "";
+    background-color: var(--color-secondary);
+    display: inline-block;
+    position: absolute;
+    bottom: -10px;
+    left: -16px;
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+}
+
+.breadcrumbs {
+  padding: 20px 16px 20px 0;
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline;
+    font-size: 18px;
+    color: var(--color-contrast-medium);
+  }
+  li + li:before {
+    padding: 8px;
+    color: var(--color-contrast);
+    content: "/\00a0";
+  }
+}
+
+// Global media queries
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

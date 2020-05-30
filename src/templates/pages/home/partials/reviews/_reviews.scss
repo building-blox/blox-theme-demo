@@ -1,0 +1,35 @@
+/**************
+Reviews section
+***************/
+
+.reviews {
+	text-align: center;
+	overflow-x: hidden;
+	padding: 100px 0 200px 0;
+}
+
+.slider{
+	&__image {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		margin: 0 auto;
+	}
+	&__item {
+		max-width: 500px;
+		overflow: hidden;
+	}
+	&__quote {
+		font-size: 20px;
+		line-height: 1.4em;
+		color: var(--color-contrast-medium);
+	}
+	&__name {
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	&__position {
+		color: var(--color-contrast-medium);
+		font-size: 14px;
+	}
+}

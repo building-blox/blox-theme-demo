@@ -1,0 +1,29 @@
+/************
+Theme
+*************/
+
+:root, [data-theme="default"] {
+
+    /* color contrasts */
+    --color-bg: var(--color-ternary);
+    --color-bg-contrast-lower: var(--color-ternary-contrast-10);
+    --color-bg-contrast-low: var(--color-ternary-contrast-30);
+    --color-bg-contrast-medium: var(--color-ternary-contrast-50);
+    --color-bg-contrast-high: var(--color-ternary-contrast-80);
+    --color-bg-contrast: var(--color-ternary-contrast);
+  }
+  
+  [data-theme] {
+    background-color: var(--color-bg);
+    color: var(--color-bg-contrast);
+  }
+  
+  [data-theme="dark"] {
+    /* color contrasts */
+    --color-bg: var(--color-ternary-contrast);
+    --color-bg-contrast-lower: var(--color-ternary-contrast-80);
+    --color-bg-contrast-low: var(--color-ternary-contrast-50);
+    --color-bg-contrast-medium: var(--color-ternary-contrast-30);
+    --color-bg-contrast-high: var(--color-ternary-contrast-10);
+    --color-bg-contrast: var(--color-ternary);
+  }

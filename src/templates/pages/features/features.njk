@@ -1,0 +1,20 @@
+{% import "components/list-item/list-item.njk" as listItem %}
+{% set page = {
+  name: 'features',
+  title: 'Features'
+} %}
+
+{% extends "layout/layout.njk" %}
+
+{% block content %}
+  <div class="features item container">
+    <div class="item__header">
+      <h1 class="item__name">{{blox.db.features.contentType.pluralName}}</h1>
+    </div>
+    {% for feature in blox.db.features.items %}
+     {% call listItem.default({
+        feature: feature
+     }) %}{% endcall %}
+    {% endfor %}
+  </div>
+{% endblock %}
