@@ -1,5 +1,5 @@
 # Blox Theme Demo
-[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Finspiring-sammet-8f8ba9.netlify.com&tab=desktop)
+Lighthouse score: 100/100
 
 > The primary goal of the project is to facilitate rapid development of static websites.
 
