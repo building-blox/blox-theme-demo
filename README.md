@@ -104,6 +104,15 @@ Dummy data of reviews, features and documentation is already included in the pro
 2. Load remote data by running ````npm load --dataUrl 'http://example.com/api/whatever'````
 3. Load remote data and build the project by running ````npm build````
 
+##### Data environment variables
+Rename the ```.env.sample``` file to ```.env``` and update the values.
+````
+BASE_URL=https://studio.appyay.com
+ENV_ID=
+API_KEY=
+DATA_URL=${BASE_URL}/api/cd/v1/environments/${ENV_ID}/items?apikey=${API_KEY}
+````
+
 #### Database
 The database data for the application is located at data/db.json. This data can be repopulated every time the project builds, so you can have dynamic data if used in combination with static hosting services, webhooks and a headless CMS.
 

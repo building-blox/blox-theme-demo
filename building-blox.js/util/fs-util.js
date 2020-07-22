@@ -21,18 +21,22 @@ module.exports = {
   },
   hasDataFile: function () {
     return new Promise(function (resolve, reject) {
+      console.log('...hasDataFile()')
       fs.readdir(config.paths.data, function (err, files) {
         if (err) {
           // No data folder
+          console.log('No data folder')
           resolve(false);
         } else {
           if (!files.length) {
-            // No files in data folder, carry on
+            // No files in data folder
+            console.log('No files in data folder')
             resolve(false);
           } else {
             let hasData = false;
             for (let i = 0; i < files.length; i++) {
               const file = files[i];
+              console.log('file:', file)
               if (file === "db.json") {
                 hasData = true;
                 break;

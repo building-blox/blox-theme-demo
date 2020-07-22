@@ -6,7 +6,7 @@ concat = require('gulp-concat'),
   scss = require("postcss-scss"),
   autoprefixer = require("autoprefixer"),
   postcssProcessors = [
-    autoprefixer({ browsers: ["last 2 versions", "ie > 10"] }),
+    autoprefixer(),
   ];
 const fs = require("fs");
 const fsUtils = require("../util/fs-util");

@@ -4,12 +4,11 @@ const tailwindColorsPath = "tailwind.colors.js";
 const themeCSSPath = "src/assets/scss/dist/_theme.scss";
 
 module.exports = {
-  doTheme: async (globalData) => {
-    let theme = globalData.blox.db.meta.space.theme;
+  doTheme: async (config) => {
+    let theme = config.globalData.blox.db.meta.space.theme;
     let colorsString = await module.exports.doColors(theme);
-    await module.exports.doTailwindColors(theme);
-    let fontsString = await module.exports.doFonts(globalData);
-
+    // await module.exports.doTailwindColors(theme);
+    let fontsString = await module.exports.doFonts(config.globalData);
     fs.writeFileSync(
       themeCSSPath,
       `/* Theme */\n\n:root {${colorsString + fontsString}\n}`,
@@ -45,13 +44,6 @@ module.exports = {
     let colorPairs = theme.colorPairs;
     let colorsString = await module.exports.getColorCSSVariables(colorPairs);
     return colorsString;
-    // fs.writeFileSync(
-    //   themeCSSPath,
-    //   `/* Theme */\n\n:root {${colorsString}}`,
-    //   null,
-    //   4
-    // );
-    module.exports.doTailwindColors(theme);
   },
   doTailwindColors: (theme) => {
     let tailwindColors = {};

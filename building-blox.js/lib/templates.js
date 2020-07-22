@@ -4,10 +4,8 @@ const fs = require("fs");
 const path = require("path");
 
 const data = require("gulp-data");
-const gulpif = require("gulp-if");
 const concat = require("gulp-concat");
 const nunjucksRender = require("gulp-nunjucks-render");
-var inlinesource = require("gulp-inline-source");
 
 const nunjucksOptions = {
   path: [`${path.join(__dirname, "../../")}src/templates`, "build/css/"],

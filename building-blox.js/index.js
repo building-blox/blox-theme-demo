@@ -32,8 +32,6 @@
   const argv = require("yargs").argv;
   const path = require("path");
   const fs = require("fs");
-  const fsPath = require("fs-path");
-  const axios = require("axios");
   const info = chalk.keyword("lightblue");
   const success = chalk.keyword("lightgreen");
   const fsUtils = require("./util/fs-util");
@@ -41,7 +39,6 @@
   const constants = require("./lib/constants");
   const templates = require("./lib/templates");
   const scripts = require("./lib/scripts");
-  const styles = require("./lib/styles");
 
   /**
    * Blox class. Prepares building blocks for static site generation including pages,
@@ -75,50 +72,54 @@
 
       this.gulp.task("blox:dev", (done) => self.gulp.series("blox:run")(done));
 
-      this.gulp.task("blox:load", function (done) {
-        if (!fsUtils.hasDataFile()) {
-          if (!self.options.dataUrl && !argv.dataUrl) {
-            throw new Error("Blox: No data URL provided");
-          }
-          console.log(
-            info("blox: fetching remote data from " + self.options.dataUrl)
-          );
-          return new Promise(function (resolve, reject) {
-            let dataUrl =
-              self.options.dataUrl !== undefined
-                ? self.options.dataUrl
-                : argv.dataUrl;
-            axios
-              .get(dataUrl)
-              .then(function (response) {
-                fsPath.writeFile(
-                  `${config.paths.data}/db.json`,
-                  JSON.stringify(response.data, null, 4),
-                  function (err) {
-                    if (err) {
-                      throw err;
-                    } else {
-                      console.log(
-                        success(
-                          "Blox: Remote data successfully written to file."
-                        )
-                      );
-                      resolve();
-                    }
-                  }
-                );
-              })
-              .catch(function (error) {
-                reject(error);
-              });
-          }).then(function () {
-            done();
-          });
-        } else {
-          console.log(info("Blox: Data not loaded - no db.json file found"));
-          done();
-        }
+      this.gulp.task("blox:load", async function (done) {
+        await self.loadDataHook();
+        done();
       });
+      // this.gulp.task("blox:load", function (done) {
+      //   if (!fsUtils.hasDataFile()) {
+      //     if (!self.options.dataUrl && !argv.dataUrl) {
+      //       throw new Error("Blox: No data URL provided");
+      //     }
+      //     console.log(
+      //       info("blox: fetching remote data from " + self.options.dataUrl)
+      //     );
+      //     return new Promise(function (resolve, reject) {
+      //       let dataUrl =
+      //         self.options.dataUrl !== undefined
+      //           ? self.options.dataUrl
+      //           : argv.dataUrl;
+      //       axios
+      //         .get(dataUrl)
+      //         .then(function (response) {
+      //           fsPath.writeFile(
+      //             `${config.paths.data}/db.json`,
+      //             JSON.stringify(response.data, null, 4),
+      //             function (err) {
+      //               if (err) {
+      //                 throw err;
+      //               } else {
+      //                 console.log(
+      //                   success(
+      //                     "Blox: Remote data successfully written to file."
+      //                   )
+      //                 );
+      //                 resolve();
+      //               }
+      //             }
+      //           );
+      //         })
+      //         .catch(function (error) {
+      //           reject(error);
+      //         });
+      //     }).then(function () {
+      //       done();
+      //     });
+      //   } else {
+      //     console.log(info("Blox: Data not loaded - no db.json file found"));
+      //     done();
+      //   }
+      // });
 
       this.gulp.task("blox:run", function (done) {
         self.run().then(function () {
@@ -163,7 +164,7 @@
     async run() {
       await Promise.all([
         await this.init(),
-        await this.doTheme(),
+        await this.doThemeHook(),
         await scripts.doComponentScripts(),
         await this.doGlobalScripts(),
         await this.doTemplates(),
@@ -174,10 +175,9 @@
       await scripts.doScripts({
         gulp: this.gulp,
         source: `${path.join(__dirname, "../")}src/assets/js/index.js`,
-        dest: `${path.join(__dirname, "../")}public/js`
+        dest: `${path.join(__dirname, "../")}public/js`,
       });
     }
-
 
     /**
      * Setup and page templates.
@@ -231,61 +231,94 @@
     /**
      * Load data from external resource. Data will be written to src/data/db.json.
      */
-    loadData() {
-      return new Promise((resolve, reject) => {
-        if (
-          !this.options.dataFetchType &&
-          this.options.dataFetchType === "remote"
-        ) {
-          if (!this.options.apiEndpoint) {
-            throw new Error(
-              'Please provide "apiEndpoint" or set "dataFetchType" to "local"'
-            );
-          }
-          if (!this.options.apiKey) {
-            throw new Error(
-              'Please provide "apiKey" or set "dataFetchType" to "local"'
-            );
-          }
-        } else {
-          if (this.options.dataFetchType !== "local") {
-            throw new Error(
-              'Value of dataFetchType must be either "remote" or "local"'
-            );
-          } else {
-            return;
-          }
-        }
-        let dataUrl = `${this.options.apiEndpoint}?apikey=${this.options.apiKey}`;
-        axios
-          .get(dataUrl)
-          .then(async (response) => {
-            await this.doTheme(response.data.meta.space);
-            await write.sync(`${this.dataPath}db.json`, response.data);
-            console.log(
-              success(
-                "Blox: Remote data successfully written to src/data/db.json"
-              )
-            );
-            resolve();
-          })
-          .catch(function (err) {
-            console.log(
-              info(
-                "Blox: Unable to retreive data. Falling back to local data.",
-                err
-              )
-            );
-            resolve();
-          });
+    // loadData() {
+    //   return new Promise((resolve, reject) => {
+    //     if (
+    //       !this.options.dataFetchType &&
+    //       this.options.dataFetchType === "remote"
+    //     ) {
+    //       if (!this.options.apiEndpoint) {
+    //         throw new Error(
+    //           'Please provide "apiEndpoint" or set "dataFetchType" to "local"'
+    //         );
+    //       }
+    //       if (!this.options.apiKey) {
+    //         throw new Error(
+    //           'Please provide "apiKey" or set "dataFetchType" to "local"'
+    //         );
+    //       }
+    //     } else {
+    //       if (this.options.dataFetchType !== "local") {
+    //         throw new Error(
+    //           'Value of dataFetchType must be either "remote" or "local"'
+    //         );
+    //       } else {
+    //         return;
+    //       }
+    //     }
+    //     let dataUrl = `${this.options.apiEndpoint}?apikey=${this.options.apiKey}`;
+    //     axios
+    //       .get(dataUrl)
+    //       .then(async (response) => {
+    //         await this.doTheme(response.data.meta.space);
+    //         await write.sync(`${this.dataPath}db.json`, response.data);
+    //         console.log(
+    //           success(
+    //             "Blox: Remote data successfully written to src/data/db.json"
+    //           )
+    //         );
+    //         resolve();
+    //       })
+    //       .catch(function (err) {
+    //         console.log(
+    //           info(
+    //             "Blox: Unable to retreive data. Falling back to local data.",
+    //             err
+    //           )
+    //         );
+    //         resolve();
+    //       });
+    //   });
+    // }
+
+    // Hooks
+
+    doThemeHook() {
+      return new Promise(async (resolve) => {
+        this.doHook(constants.hooks.doTheme);
+        resolve();
       });
     }
 
-    doTheme(space) {
+    loadDataHook() {
       return new Promise(async (resolve) => {
-        const hookName = constants.hooks.doTheme;
-        if (this.hooks[hookName])
-          this.hooks[hookName].forEach((action) => action(this.globalData));
+        let hasDataFile = await fsUtils.hasDataFile();
+        if (hasDataFile) {
+          if (!this.options.dataUrl && !argv.dataUrl) {
+            throw new Error("Blox: No data URL provided");
+          }
+          console.log(
+            info("Blox: Fetching remote data from " + this.options.dataUrl)
+          );
+          this.doHook(constants.hooks.loadData);
+        } else {
+          console.log(info("Blox: Data not loaded - no db.json file found"));
+          resolve();
+        }
+        
+        resolve();
+      });
+    }
+
+    doHook(hookName) {
+      return new Promise(async (resolve) => {
+        if (this.hooks[hookName]) {
+          let config = {
+            options: this.options,
+            globalData: this.globalData,
+          };
+          this.hooks[hookName].forEach((action) => action(config));
+        }
         resolve();
       });
     }
