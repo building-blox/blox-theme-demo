@@ -3,11 +3,15 @@ const axios = require("axios");
 
 const DB_DATA_FILE_PATH = `./src/data/db.json`;
 
+/**
+ * Load data from external resource. Data will be written to src/data/db.json.
+ */
 module.exports = async (config) => {
-
   return new Promise(function (resolve, reject) {
     let dataUrl =
-      config.options.dataUrl !== undefined ? config.options.dataUrl : argv.dataUrl;
+      config.options.dataUrl !== undefined
+        ? config.options.dataUrl
+        : argv.dataUrl;
     axios
       .get(dataUrl)
       .then(function (response) {

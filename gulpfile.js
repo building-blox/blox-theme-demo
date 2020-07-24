@@ -15,7 +15,7 @@ const sass = require("gulp-sass"),
   autoprefixer = require("autoprefixer"),
   postcssProcessors = [autoprefixer()];
 
-const Blox = require("./building-blox.js");
+const Blox = require("blox");
 
 const blox = new Blox(gulp, {
   homePage: "home",
