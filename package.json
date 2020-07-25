@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
-    "@building-blox/blox": "0.0.3",
+    "@building-blox/blox": "0.0.5",
     "autoprefixer": "^9.8.5",
     "axios": "^0.19.2",
     "browser-sync": "^2.26.10",
