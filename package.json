@@ -27,7 +27,7 @@
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
-    "fs-path": "0.0.24",
+    "fs-path": "0.0.25",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-better-rollup": "^4.0.1",
