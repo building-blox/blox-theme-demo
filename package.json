@@ -22,7 +22,7 @@
     "@building-blox/blox": "0.0.5",
     "autoprefixer": "^9.8.5",
     "axios": "^0.19.2",
-    "browser-sync": "^2.26.10",
+    "browser-sync": "^2.27.10",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
